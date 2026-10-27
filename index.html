@@ -726,6 +726,101 @@ html.modal-open{overflow:hidden}
 .ad-upload:focus-within label.ad-btn{outline:2px solid var(--teal);outline-offset:2px}
 .ad-or{display:flex;align-items:center;gap:12px;margin:14px 0;color:var(--ink-soft);font-size:.82rem}
 .ad-or::before,.ad-or::after{content:"";flex:1;height:1px;background:var(--line)}
+
+/* ===== phone sizing pass ===== */
+.ad-top-back{display:none}
+@media (max-width:560px){
+  /* book grid: two buttons stacked so they always fit the half-width card */
+  .card .actions{grid-template-columns:1fr;gap:6px}
+  .card .actions .btn{width:100%;padding:9px 6px;font-size:.82rem;min-width:0}
+  .card .actions .btn-wa,.card .actions .btn[disabled]{order:-1}
+  .card h3{font-size:.95rem}
+  .card .price{font-size:1.1rem}
+  .grid{gap:26px 12px}
+  /* hero */
+  .motto{font-size:clamp(2.5rem,13vw,3.4rem)}
+  .second-motto{font-size:1.25rem}
+  .hero-actions .btn{flex:1 1 auto}
+  .hero-facts{gap:10px 18px;font-size:.85rem}
+  /* sections */
+  .sec-head h2{font-size:clamp(1.7rem,8vw,2.1rem)}
+  .feat-row{grid-template-columns:repeat(5,minmax(136px,1fr));gap:14px}
+  .feat .cover{font-size:12px}
+  .offer .img{aspect-ratio:2/1}
+  .rev{padding:16px 18px}
+  .rev p{font-size:1.02rem}
+  .form{padding:18px}
+  .about-card{padding:26px}
+  .about-card blockquote{font-size:1.6rem}
+  .c-main{padding:24px 20px}
+  .c-actions .c-btn{flex:1 1 auto;justify-content:center}
+  footer.site .copy{flex-direction:column;align-items:flex-start}
+  /* book details: bottom sheet */
+  dialog#dlg{width:100%;max-width:100%;margin:auto 0 0;border-radius:20px 20px 0 0;max-height:92dvh}
+  .dlg{grid-template-columns:1fr;gap:16px;padding:22px max(18px,env(safe-area-inset-right,0px)) calc(22px + env(safe-area-inset-bottom,0px)) max(18px,env(safe-area-inset-left,0px))}
+  .dlg>div:first-of-type{display:flex;justify-content:center}
+  .dlg .cover{width:128px;font-size:11px}
+  .dlg h2{font-size:1.7rem}
+  .dlg .row .btn{flex:1 1 auto}
+  .dlg .x{top:10px;left:10px}
+}
+@media (max-width:640px){
+  /* dashboard: sidebar becomes a bottom tab bar with labels */
+  .ad{grid-template-columns:1fr;grid-template-rows:minmax(0,1fr) auto}
+  .ad-main{grid-row:1}
+  .ad-side{grid-row:2;flex-direction:row;gap:0;padding:6px max(6px,env(safe-area-inset-left,0px)) calc(6px + env(safe-area-inset-bottom,0px)) max(6px,env(safe-area-inset-right,0px));overflow:visible;border-top:1px solid rgba(255,255,255,.08)}
+  .ad-brand,.ad-side-foot{display:none}
+  .ad-nav{flex:1;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:2px}
+  .ad-nav-i{flex-direction:column;justify-content:center;gap:4px;width:100%;padding:8px 2px 6px;border-radius:10px;font-size:.7rem;text-align:center;position:relative}
+  .ad-nav-i span{display:block!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+  .ad-nav-i svg{width:22px;height:22px}
+  .ad-nav-i[aria-current="page"]{box-shadow:none;background:rgba(127,214,210,.14);color:#7FD6D2}
+  .ad-badge{position:absolute;top:3px;left:calc(50% - 22px);min-width:18px;height:18px;font-size:.66rem;margin:0}
+  .ad-top{gap:10px;padding:calc(12px + env(safe-area-inset-top,0px)) max(14px,env(safe-area-inset-right,0px)) 12px max(14px,env(safe-area-inset-left,0px))}
+  .ad-top-back{display:grid;place-items:center;width:40px;height:40px;flex:none;border-radius:10px;border:1px solid var(--line);background:var(--sheet);color:var(--ink);cursor:pointer}
+  .ad-top-back svg{width:18px;height:18px}
+  .ad-top h2{font-size:1.4rem}
+  .ad-body{padding:16px max(14px,env(safe-area-inset-right,0px)) 28px max(14px,env(safe-area-inset-left,0px));gap:16px}
+  dialog.admin .toast{bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+  /* overview */
+  .ad-kpi span{font-size:.78rem;line-height:1.4;display:block}
+  .ad-todo li{display:grid;grid-template-columns:10px minmax(0,1fr);gap:4px 12px;align-items:start}
+  .ad-todo li .dot{margin-top:8px}
+  .ad-todo li .ad-btn{grid-column:2;justify-self:start;margin:6px 0 0;height:34px;font-size:.82rem}
+  .ad-bars li{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) 28px;gap:10px}
+  /* books */
+  .ad-feat .ad-card-head{margin-bottom:10px}
+  .ad-slots{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:8px;margin-inline:-16px;padding:2px 16px 6px}
+  .ad-slot{flex:0 0 150px;scroll-snap-align:start}
+  .ad-row{gap:10px;padding:14px}
+  .c-book .ad-link{white-space:normal;line-height:1.4}
+  .ad-money{height:38px}
+  .ad-switch .lbl{font-size:.8rem}
+  .ad-icon-btn{width:38px;height:38px}
+  .ad-pager{gap:10px}
+  /* reviews / offers */
+  .ad-seg{width:100%!important;display:grid;grid-template-columns:1fr 1fr}
+  .ad-seg button{justify-content:center;padding:0 8px}
+  .ad-review-acts .ad-btn{flex:1 1 auto;height:38px}
+  .ad-offer footer .ad-pill{font-size:.7rem}
+  /* forms */
+  .ad-savebar{flex-direction:column;align-items:stretch;text-align:center;padding:12px}
+  .ad-savebar .ad-btn{height:44px}
+  .ad-danger-row .ad-btn,.ad-danger-row .ad-confirm{width:100%}
+  .ad-danger-row .ad-confirm{flex-wrap:wrap;white-space:normal}
+  .ad-dhead h2{font-size:1.35rem}
+  .ad-cover-row{gap:12px}
+  .ad-upload label.ad-btn{width:100%}
+  .ad-field>input,.ad-field>textarea{font-size:16px} /* stops iOS zooming into fields */
+  .ad-search input,.ad-select,.ad-money input{font-size:16px}
+}
+@media (max-width:380px){
+  .ad-nav-i{font-size:.64rem}
+  .ad-kpi b{font-size:1.4rem}
+  .ad-row{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"book feat" "price price" "status act"}
+  .c-price{max-width:none}
+}
+@media (max-width:640px){.search input,.field input,.field textarea,.sel{font-size:16px}}
 </style>
 
 </head>
@@ -940,7 +1035,7 @@ html.modal-open{overflow:hidden}
     <div class="ad-side-foot"><p>البيانات محفوظة في هذا المتصفح فقط.</p><button class="ad-back" type="button" data-adm-close aria-label="العودة إلى الموقع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 6l6 6-6 6"/></svg><span>العودة إلى الموقع</span></button></div>
   </aside>
   <section class="ad-main">
-    <header class="ad-top"><div><h2 id="adTitle"></h2><p id="adSub"></p></div><div class="ad-top-actions" id="adActions"></div></header>
+    <header class="ad-top"><button class="ad-top-back" type="button" data-adm-close aria-label="العودة إلى الموقع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 6l6 6-6 6"/></svg></button><div><h2 id="adTitle"></h2><p id="adSub"></p></div><div class="ad-top-actions" id="adActions"></div></header>
     <div class="ad-body" id="adBody"></div>
   </section>
   <div class="ad-scrim" id="adScrim" hidden></div>
